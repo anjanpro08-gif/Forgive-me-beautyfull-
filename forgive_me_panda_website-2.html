@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Please Forgive Me 🥺</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#fff0f6,#ffe4ec,#fce7f3);color:#6d214f;overflow-x:hidden}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px}
+h1{font-size:clamp(1.8rem,5vw,3rem);margin:10px 0;color:#d63384}
+p{font-size:1.15rem}
+.scene{position:relative;width:min(340px,90vw);height:245px;margin:10px auto 22px}
+.person{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:260px;height:115px;background:#ffc6a8;border:4px solid #b86b5b;border-radius:65px 65px 45px 45px;box-shadow:0 8px 0 #f4a78d}
+.head{position:absolute;left:50%;top:5px;transform:translateX(-50%);width:130px;height:130px;border-radius:50%;border:5px solid #b86b5b;background:#ffd8c4;overflow:hidden;z-index:3}
+.head img{width:100%;height:100%;object-fit:cover;object-position:center;transform:rotate(90deg) scale(1.35)}
+.arm{position:absolute;top:50px;width:80px;height:22px;background:#ffc6a8;border:4px solid #b86b5b;border-radius:20px;z-index:4}
+.arm.left{left:0;transform:rotate(-35deg)} .arm.right{right:0;transform:rotate(35deg)}
+.hand{position:absolute;top:24px;width:32px;height:36px;background:#ffd8c4;border:3px solid #b86b5b;border-radius:16px;z-index:5}
+.hand.left{left:27px} .hand.right{right:27px}
+.leg{position:absolute;bottom:0;width:95px;height:28px;background:#6c9df5;border:4px solid #4269b0;border-radius:20px}
+.leg.left{left:32px;transform:rotate(-18deg)} .leg.right{right:32px;transform:rotate(18deg)}
+.tear{position:absolute;z-index:8;color:#38a9ff;font-size:28px;animation:drop 1.3s infinite}
+.tear.one{top:88px;left:115px} .tear.two{top:100px;right:105px;animation-delay:.5s}
+@keyframes drop{0%{transform:translateY(-8px);opacity:0}40%{opacity:1}100%{transform:translateY(25px);opacity:0}}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+button{border:0;border-radius:999px;padding:14px 24px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 5px 14px #d98ab477;transition:transform .15s}
+button:active{transform:scale(.96)}
+.yes{background:#ff4f9a;color:white} .no{background:#fff;color:#d63384;border:2px solid #ff8fbd}
+#lovePage{display:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#ffb6d5,#ffe6f1,#ffd1e7)}
+.love-title{z-index:2;font-size:clamp(2rem,7vw,4rem);color:#e60073;text-shadow:0 3px white;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.floating{position:fixed;pointer-events:none;font-weight:900;color:#ff1685;text-shadow:0 2px 4px #fff;font-size:clamp(18px,4vw,36px);animation:floatFade var(--duration,4s) ease-in-out infinite alternate;opacity:0}
+@keyframes floatFade{0%{opacity:0;transform:translateY(30px) scale(.7)}20%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(-40px) scale(1.2)}}
+
+.panda-head{background:#fff;border:5px solid #222;overflow:visible;z-index:6}
+.panda-ear{position:absolute;top:-18px;width:48px;height:48px;background:#222;border-radius:50%;border:4px solid #111;z-index:-1}
+.panda-ear.left{left:-8px}.panda-ear.right{right:-8px}
+.panda-eye{position:absolute;top:32px;width:38px;height:47px;background:#222;border-radius:50%;transform:rotate(28deg)}
+.panda-eye.left{left:17px}.panda-eye.right{right:17px;transform:rotate(-28deg)}
+.panda-eye span{position:absolute;top:13px;left:12px;width:12px;height:12px;background:white;border-radius:50%}
+.panda-nose{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:20px;height:14px;background:#222;border-radius:50%}
+.panda-mouth{position:absolute;top:87px;left:50%;transform:translateX(-50%);width:28px;height:15px;border-bottom:4px solid #222;border-radius:50%}
+.panda-head:after{content:"";position:absolute;left:8px;right:8px;bottom:8px;height:20px;background:#ffd8d8;border-radius:50%;opacity:.45}
+</style>
+</head>
+<body>
+<section id="mainPage" class="page">
+  <h1>Please forgive me 🥺</h1>
+  <p>A little panda is crying and doing sit-ups while holding his ears! 🐼😭</p>
+  <div class="scene" aria-label="Cute crying panda doing sit-ups and holding its ears">
+    <div class="leg left"></div><div class="leg right"></div>
+    <div class="person"></div>
+    <div class="arm left"></div><div class="arm right"></div>
+    <div class="hand left"></div><div class="hand right"></div>
+    <div class="head panda-head"><div class="panda-ear left"></div><div class="panda-ear right"></div><div class="panda-eye left"><span></span></div><div class="panda-eye right"><span></span></div><div class="panda-nose"></div><div class="panda-mouth"></div></div><div class="tear one">💧</div><div class="tear two">💧</div><!-- old face image removed -->
+  </div>
+  <p>Will you forgive me? 🥹🌷</p>
+  <div class="buttons">
+    <button class="yes" onclick="forgive()">I forgave you 💗</button>
+    <button class="no" onclick="nothing()">I won't forgive you 😤</button>
+  </div>
+</section>
+
+<section id="lovePage" class="page">
+  <h1 class="love-title">I LOVE YOUUUU 💗</h1>
+  <p>😭💋😘🌷🎀</p>
+</section>
+
+<script>
+function nothing(){ /* Nothing happens, just as requested. */ }
+function forgive(){
+  document.getElementById('mainPage').style.display='none';
+  document.getElementById('lovePage').style.display='flex';
+  const emojis=['😭','💋','😘','🌷','🎀','💗','💕','I LOVE YOU','I LOVE YOUUU'];
+  for(let i=0;i<90;i++){
+    const el=document.createElement('div');
+    el.className='floating';
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.top=Math.random()*100+'vh';
+    el.style.setProperty('--duration',(2.2+Math.random()*3.5)+'s');
+    el.style.animationDelay=(Math.random()*2)+'s';
+    document.body.appendChild(el);
+  }
+}
+</script>
+</body>
+</html>
